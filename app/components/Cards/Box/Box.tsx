@@ -5,9 +5,10 @@ interface BoxProps {
 	width: string;
 	height: string;
 	minHeight?: string;
+	minWidth?: string;
 }
 
-const Box = ({ noOfBoxes, width, height, minHeight }: BoxProps) => {
+const Box = ({ noOfBoxes, width, height, minHeight, minWidth }: BoxProps) => {
 	return (
 		<>
 			{Array.from(Array(noOfBoxes).keys()).map((box) => (
@@ -16,7 +17,9 @@ const Box = ({ noOfBoxes, width, height, minHeight }: BoxProps) => {
 					width={width}
 					height={height}
 					minHeight={minHeight}
+					minWidth={minWidth}
 					background="#F3B5FA"
+					flexShrink="0"
 				></CenterAlignedColumnContainer>
 			))}
 		</>

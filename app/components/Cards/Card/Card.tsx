@@ -1,35 +1,33 @@
 //@ts-nocheck
-import {
-	constants,
-	FlexStartCenterAlignedColumnContainer,
-	GridContainer,
-	Text,
-} from "@benny-eleventy/benny-ui";
+import { constants, GridContainer, Text } from "@benny-eleventy/benny-ui";
 import type { StyledComponent } from "styled-components";
 import type { ContainerProps } from "@benny-eleventy/benny-ui/dist/styles/container/container.types";
 import type { DefaultTheme } from "styled-components";
 
-interface HorizontalCardProps {
+interface CardProps {
 	//ParentContainer as styled component
 	ParentContainer?: StyledComponent<"div", DefaultTheme, ContainerProps, never>;
 	ChildContainer?: () => JSX.Element;
 	containerName?: string;
 	containerInfomartion?: string;
 	notes?: string;
+	variant: "horizontal" | "vertical";
 }
 
-const HorizontalCard = ({
+const Card = ({
 	ParentContainer,
 	ChildContainer,
 	containerName,
 	containerInfomartion,
 	notes,
-}: HorizontalCardProps) => {
+	variant,
+}: CardProps) => {
 	return (
 		<GridContainer
-			width="49%"
-			aspectRatio="2/0.8"
-			gridTemplateColumns="30% 70%"
+			width={variant === "horizontal" ? "49%" : "32%"}
+			aspectRatio={variant === "horizontal" ? "2/0.8" : "1/1.1"}
+			gridTemplateColumns={variant === "horizontal" ? "30% 70%" : "100%"}
+			gridTemplateRows={variant === "vertical" ? "30% 70%" : "100%"}
 			background="rgba(255, 255, 255, 0.1)"
 			alignItems="center"
 			justifyContent="center"
@@ -48,7 +46,7 @@ const HorizontalCard = ({
 			<GridContainer
 				width="100%"
 				height="100%"
-				gridTemplateRows="2% 55% 40%"
+				gridTemplateRows="10% 55% 35%"
 				alignItems="center"
 				justifyContent="center"
 				padding={constants.spaces.xxsmall}
@@ -74,4 +72,4 @@ const HorizontalCard = ({
 	);
 };
 
-export default HorizontalCard;
+export default Card;
