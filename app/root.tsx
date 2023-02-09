@@ -1,3 +1,9 @@
+import {
+	BennyThemeProvider,
+	constants,
+	FlexStartCenterAlignedColumnContainer,
+	OverflowFlexStartCenterAlignedColumnContainer,
+} from "@benny-eleventy/benny-ui";
 import type { MetaFunction } from "@remix-run/cloudflare";
 import {
 	Links,
@@ -7,10 +13,12 @@ import {
 	Scripts,
 	ScrollRestoration,
 } from "@remix-run/react";
+import { Navbar, Sidebar } from "@/components";
+import { SidebarContentContainer } from "./styles";
 
 export const meta: MetaFunction = () => ({
 	charset: "utf-8",
-	title: "New Remix App",
+	title: "Benny UI Design System",
 	viewport: "width=device-width,initial-scale=1",
 });
 
@@ -23,10 +31,23 @@ export default function App() {
 				{typeof document === "undefined" ? "__STYLES__" : null}
 			</head>
 			<body>
-				<Outlet />
-				<ScrollRestoration />
-				<Scripts />
-				<LiveReload />
+				<BennyThemeProvider>
+					<FlexStartCenterAlignedColumnContainer
+						width="100vw"
+						height="100vh"
+						background="black"
+						borderRadius="0"
+					>
+						<Navbar />
+						<SidebarContentContainer>
+							<Sidebar />
+							<Outlet />
+						</SidebarContentContainer>
+					</FlexStartCenterAlignedColumnContainer>
+					<ScrollRestoration />
+					<Scripts />
+					<LiveReload />
+				</BennyThemeProvider>
 			</body>
 		</html>
 	);

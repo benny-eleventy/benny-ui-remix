@@ -1,19 +1,54 @@
 import {
-	BennyThemeProvider,
-	CenterAlignedColumnContainer,
+	constants,
+	FlexStartCenterAlignedColumnContainer,
 	Text,
 } from "@benny-eleventy/benny-ui";
 
 export default function Index() {
 	return (
-		<BennyThemeProvider>
-			<CenterAlignedColumnContainer
-				width="100vw"
-				height="100vh"
-				background="lightpink"
+		<>
+			<FlexStartCenterAlignedColumnContainer
+				width="100%"
+				height="120vh"
+				overflowY="scroll"
+				padding={constants.spaces.xsmall}
+				border="1px solid white"
+				style={{
+					scrollbarWidth: "thin",
+					scrollbarColor: "lightgreen black",
+				}}
 			>
-				<Text>Hello World</Text>
-			</CenterAlignedColumnContainer>
-		</BennyThemeProvider>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+				<Text color="white">This is Page</Text>
+			</FlexStartCenterAlignedColumnContainer>
+		</>
 	);
 }
