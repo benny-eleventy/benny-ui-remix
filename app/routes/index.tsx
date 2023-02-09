@@ -19,35 +19,6 @@ export default function Index() {
 				}}
 			>
 				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
-				<Text color="white">This is Page</Text>
 			</FlexStartCenterAlignedColumnContainer>
 		</>
 	);
