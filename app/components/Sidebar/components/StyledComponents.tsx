@@ -1,21 +1,20 @@
 import { CenterAlignedColumnContainer } from "@benny-eleventy/benny-ui";
-import React from "react";
 
 const StyledComponents = () => {
 	return (
 		<>
 			<CenterAlignedColumnContainer
-				width="25%"
+				width="clamp(2rem,25%,3.5rem)"
 				aspectRatio="1"
 				background="black"
 			/>
 			<CenterAlignedColumnContainer
-				width="25%"
+				width="clamp(2rem,25%,3.5rem)"
 				aspectRatio="1"
 				background="black"
 			/>
 			<CenterAlignedColumnContainer
-				width="25%"
+				width="clamp(2rem,25%,3.5rem)"
 				aspectRatio="1"
 				background="black"
 			/>

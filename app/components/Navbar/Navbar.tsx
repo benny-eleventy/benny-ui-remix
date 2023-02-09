@@ -8,7 +8,7 @@ const Navbar = () => {
 	return (
 		<CenterAlignedColumnContainer
 			width="100%"
-			height="10vh"
+			height="6vh"
 			background="black"
 			position="sticky"
 			top="0"

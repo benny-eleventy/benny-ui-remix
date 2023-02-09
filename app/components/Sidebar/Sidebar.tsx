@@ -1,7 +1,8 @@
 import {
-	CenterAlignedColumnContainer,
 	CenterAlignedRowContainer,
 	constants,
+	FlexStartCenterAlignedColumnContainer,
+	GridContainer,
 	Text,
 } from "@benny-eleventy/benny-ui";
 import StyledComponents from "./components/StyledComponents";
@@ -40,18 +41,24 @@ const Sidebar = () => {
 		},
 	];
 	return (
-		<CenterAlignedColumnContainer
+		<GridContainer
 			width="100%"
-			height="90vh"
+			height="auto"
+			gridAutoFlow="row"
+			paddingTop="6vh"
+			gridAutoRows="min-content"
+			alignItems="start"
 			padding={constants.spaces.xsmall}
-			gap={constants.spaces.xsmall}
-			border="1px solid white"
+			gap={constants.spaces.xxsmall}
+			style={{
+				alignContent: "start",
+			}}
 		>
 			{sidebarOptions.map(({ option, DisplayComponent, background }) => {
 				return (
-					<CenterAlignedColumnContainer
+					<FlexStartCenterAlignedColumnContainer
 						width="100%"
-						height="13vh"
+						height="auto"
 						padding={constants.spaces.xxsmall}
 						gap={constants.spaces.xxsmall}
 						key={option}
@@ -70,17 +77,17 @@ const Sidebar = () => {
 						</Text>
 						<CenterAlignedRowContainer
 							width="90%"
-							height="70%"
+							height="auto"
 							background={background}
 							gap={constants.spaces.xsmall}
 							padding={constants.spaces.xxsmall}
 						>
 							{DisplayComponent}
 						</CenterAlignedRowContainer>
-					</CenterAlignedColumnContainer>
+					</FlexStartCenterAlignedColumnContainer>
 				);
 			})}
-		</CenterAlignedColumnContainer>
+		</GridContainer>
 	);
 };
 
