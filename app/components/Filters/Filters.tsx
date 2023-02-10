@@ -26,7 +26,7 @@ const Chip = ({ displayText, isActive }: ChipProps) => {
 
 const Filters = ({ data }: FiltersProps) => {
 	return (
-		<FiltersContainer width="100%" height="8%">
+		<FiltersContainer width="100%" height="auto" flexShrink="0">
 			{data.map((item, index) => (
 				<Chip
 					key={index}
@@ -43,7 +43,6 @@ export default Filters;
 
 const FiltersContainer = styled(OverflowFlexStartCenterAlignedRowContainer)`
 	width: 100%;
-	height: 5%;
 	padding: ${constants.spaces.xxsmall};
 	gap: ${constants.spaces.xsmall};
 	&::-webkit-scrollbar {
@@ -58,7 +57,7 @@ interface ChipContainerProps {
 const ChipContainer = styled(CenterAlignedColumnContainer)<ChipContainerProps>`
 	width: auto;
 	height: 98%;
-	padding-block: ${constants.spaces.xsmall};
+	padding-block: ${constants.spaces.xxsmall};
 	padding-inline: ${constants.spaces.small};
 	background: ${(props) => (props.isActive ? "white" : "#303030")};
 	color: ${(props) => (props.isActive ? "#303030" : "white")};

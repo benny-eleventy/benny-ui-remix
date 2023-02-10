@@ -13,6 +13,7 @@ const SectionTitleText = ({ title }: SectionTitleTextProps) => {
 			fontWeight={`${constants.typography.weight.bold}`}
 			color="white"
 			paddingLeft={constants.spaces.xxsmall}
+			textTransform="capitalize"
 			style={{
 				alignSelf: "flex-start",
 			}}
