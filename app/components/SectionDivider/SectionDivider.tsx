@@ -16,9 +16,7 @@ const SectionDivider = ({
 			width={width}
 			height={height}
 			backgroundColor={backgroundColor}
-		>
-			SectionDivider
-		</CenterAlignedColumnContainer>
+		></CenterAlignedColumnContainer>
 	);
 };
 

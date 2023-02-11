@@ -33,6 +33,7 @@ const DualColorChip = ({
 				width="auto"
 				height="auto"
 				paddingInline={constants.spaces.small}
+				paddingBlock={constants.spaces.xsmall}
 				background={keyBackground}
 				borderRadius="0.5rem 0 0 0.5rem"
 			>
@@ -42,6 +43,7 @@ const DualColorChip = ({
 				width="auto"
 				height="auto"
 				paddingInline={constants.spaces.small}
+				paddingBlock={constants.spaces.xsmall}
 				background={valueBackground}
 				borderRadius="0 0.5rem 0.5rem 0"
 			>

@@ -10,6 +10,8 @@ import {
 	FlexStartCenterAlignedColumnContainer,
 	OverflowFlexStartCenterAlignedColumnContainer,
 	WrappedFlexStartCenterAlignedColumnContainer,
+	themes,
+	CenterAlignedColumnContainer,
 } from "@benny-eleventy/benny-ui";
 import {
 	columnContainersData,
@@ -17,8 +19,18 @@ import {
 	defaultContainerProps,
 	divProperties,
 } from "@/contentSeed";
+import styled from "styled-components";
+
+const BackgroundColor = styled.div`
+	padding: ${(props) => props.theme["s-small"]};
+	gap: ${(props) => props.theme["s-small"]};
+	font-size: ${(props) => props.theme["fs-small"]};
+	font-weight: ${(props) => props.theme["fw-bold"]};
+`;
 
 export default function Index() {
+	// console.log(themes);
+
 	const styledComponentsFitlers = [
 		"Containers",
 		"Text",
@@ -27,7 +39,6 @@ export default function Index() {
 		"Image",
 		"Animated Container",
 	];
-
 	return (
 		<>
 			<FlexStartCenterAlignedColumnContainer
@@ -40,9 +51,9 @@ export default function Index() {
 				<OverflowFlexStartCenterAlignedColumnContainer
 					width="100%"
 					height="auto"
-					padding={constants.spaces.xsmall}
+					backgroundColor={(props) => props.theme.color800}
 					paddingBottom={constants.spaces.xxlarge}
-					gap={constants.spaces.xsmall}
+					gap={(props) => props.theme["s-small"]}
 				>
 					<SectionTitleText title="Column Containers" />
 					<WrappedFlexStartCenterAlignedColumnContainer

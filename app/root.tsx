@@ -15,6 +15,9 @@ import {
 } from "@remix-run/react";
 import { Navbar, Sidebar } from "@/components";
 import { SidebarContentContainer } from "./styles";
+import { finalVariant } from "./types/themeVariant";
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "./styles/globalStyles/GlobalStyles";
 
 export const meta: MetaFunction = () => ({
 	charset: "utf-8",
@@ -31,7 +34,8 @@ export default function App() {
 				{typeof document === "undefined" ? "__STYLES__" : null}
 			</head>
 			<body>
-				<BennyThemeProvider>
+				<ThemeProvider theme={finalVariant}>
+					<GlobalStyle />
 					<FlexStartCenterAlignedColumnContainer
 						width="100vw"
 						height="100vh"
@@ -47,7 +51,7 @@ export default function App() {
 					<ScrollRestoration />
 					<Scripts />
 					<LiveReload />
-				</BennyThemeProvider>
+				</ThemeProvider>
 			</body>
 		</html>
 	);

@@ -12,7 +12,6 @@ export const SidebarContentContainer = styled(GridContainer)`
 	grid-template-columns: 20% 80%;
 	align-items: start;
 	justify-content: start;
-	border-radius: 0;
 	position: fixed;
 	top: 6vh;
 `;
