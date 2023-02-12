@@ -1,7 +1,7 @@
 import {
-	constants,
 	FlexStartCenterAlignedColumnContainer,
 	GridContainer,
+	s_xsmall,
 } from "@benny-eleventy/benny-ui";
 import styled from "styled-components";
 
@@ -19,6 +19,6 @@ export const SidebarContentContainer = styled(GridContainer)`
 export const PageContainer = styled(FlexStartCenterAlignedColumnContainer)`
 	width: 100%;
 	height: 90vh;
-	padding: ${constants.spaces.xsmall};
-	gap: ${constants.spaces.xsmall};
+	padding: ${s_xsmall};
+	gap: ${s_xsmall};
 `;

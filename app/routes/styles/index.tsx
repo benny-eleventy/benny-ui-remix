@@ -1,8 +1,9 @@
 import { Filters } from "@/components";
 import { PageContainer } from "@/styles";
 import {
-	constants,
 	OverflowFlexStartCenterAlignedColumnContainer,
+	s_xsmall,
+	s_xxlarge,
 } from "@benny-eleventy/benny-ui";
 import { RadiiStyles, SpacingStyles, TypographyStyles } from "./components";
 
@@ -14,9 +15,9 @@ const index = () => {
 			<OverflowFlexStartCenterAlignedColumnContainer
 				width="100%"
 				height="auto"
-				padding={constants.spaces.xsmall}
-				paddingBottom={constants.spaces.xxlarge}
-				gap={constants.spaces.xsmall}
+				padding={s_xsmall}
+				paddingBottom={s_xxlarge}
+				gap={s_xsmall}
 			>
 				<TypographyStyles />
 				<SpacingStyles />

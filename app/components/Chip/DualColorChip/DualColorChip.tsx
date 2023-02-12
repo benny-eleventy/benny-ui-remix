@@ -1,7 +1,8 @@
 import {
 	CenterAlignedColumnContainer,
 	CenterAlignedRowContainer,
-	constants,
+	s_small,
+	s_xsmall,
 	Text,
 } from "@benny-eleventy/benny-ui";
 
@@ -32,8 +33,8 @@ const DualColorChip = ({
 			<CenterAlignedColumnContainer
 				width="auto"
 				height="auto"
-				paddingInline={constants.spaces.small}
-				paddingBlock={constants.spaces.xsmall}
+				paddingInline={s_small}
+				paddingBlock={s_xsmall}
 				background={keyBackground}
 				borderRadius="0.5rem 0 0 0.5rem"
 			>
@@ -42,8 +43,8 @@ const DualColorChip = ({
 			<CenterAlignedColumnContainer
 				width="auto"
 				height="auto"
-				paddingInline={constants.spaces.small}
-				paddingBlock={constants.spaces.xsmall}
+				paddingInline={s_small}
+				paddingBlock={s_xsmall}
 				background={valueBackground}
 				borderRadius="0 0.5rem 0.5rem 0"
 			>

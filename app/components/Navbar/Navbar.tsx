@@ -1,7 +1,7 @@
 import {
-	constants,
 	CenterAlignedColumnContainer,
 	Text,
+	s_small,
 } from "@benny-eleventy/benny-ui";
 
 const Navbar = () => {
@@ -13,7 +13,7 @@ const Navbar = () => {
 			position="sticky"
 			top="0"
 			borderRadius="0"
-			padding={constants.spaces.small}
+			padding={s_small}
 		>
 			<Text color="white">This is navbar</Text>
 		</CenterAlignedColumnContainer>

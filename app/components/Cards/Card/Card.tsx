@@ -1,5 +1,12 @@
 //@ts-nocheck
-import { constants, GridContainer, Text } from "@benny-eleventy/benny-ui";
+import {
+	GridContainer,
+	Text,
+	fs_small,
+	fw_bold,
+	s_xsmall,
+	s_xxsmall,
+} from "@benny-eleventy/benny-ui";
 import type { StyledComponent } from "styled-components";
 import type { ContainerProps } from "@benny-eleventy/benny-ui/dist/styles/container/container.types";
 import type { DefaultTheme } from "styled-components";
@@ -31,15 +38,14 @@ const Card = ({
 			background="rgba(255, 255, 255, 0.1)"
 			alignItems="center"
 			justifyContent="center"
-			padding={constants.spaces.xsmall}
-			gap={constants.spaces.xsmall}
+			gap={s_xsmall}
+			padding={s_xsmall}
 		>
 			<ParentContainer
 				background="#8287FF"
 				width="100%"
 				height="100%"
-				gap={constants.spaces.xsmall}
-				padding={constants.spaces.xsmall}
+				padding={s_xsmall}
 			>
 				{ChildContainer()}
 			</ParentContainer>
@@ -49,22 +55,17 @@ const Card = ({
 				gridTemplateRows="10% 55% 35%"
 				alignItems="center"
 				justifyContent="center"
-				padding={constants.spaces.xxsmall}
-				gap={constants.spaces.xxsmall}
+				padding={s_xsmall}
+				gap={s_xxsmall}
 				color="white"
 			>
-				<Text
-					width="80%"
-					margin="0"
-					fontSize={constants.typography.size.small}
-					fontWeight={constants.typography.weight.bold}
-				>
+				<Text width="80%" margin="0" fontSize={fs_small} fontWeight={fw_bold}>
 					{containerName}
 				</Text>
-				<Text margin="0" fontSize={constants.typography.size.small}>
+				<Text margin="0" fontSize={fs_small}>
 					{containerInfomartion}
 				</Text>
-				<Text margin="0" fontSize={constants.typography.size.small}>
+				<Text margin="0" fontSize={fs_small}>
 					{notes}
 				</Text>
 			</GridContainer>

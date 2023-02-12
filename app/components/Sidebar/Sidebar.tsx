@@ -1,10 +1,13 @@
 import {
 	CenterAlignedRowContainer,
-	constants,
 	FlexStartCenterAlignedColumnContainer,
 	GridContainer,
 	Text,
+	fs_small,
+	s_xsmall,
+	s_xxsmall,
 } from "@benny-eleventy/benny-ui";
+import { useNavigate } from "@remix-run/react";
 import StyledComponents from "./components/StyledComponents";
 
 const Sidebar = () => {
@@ -13,65 +16,68 @@ const Sidebar = () => {
 			option: "Styled Components",
 			background: "linear-gradient(95.46deg, #3BA8F7 0.6%, #DC6BDE 97.25%)",
 			DisplayComponent: <StyledComponents />,
+			path: "/",
 		},
 		{
 			option: "Styles",
 			background: "linear-gradient(95.46deg, #64FFF6 0.6%, #3772CA 97.25%)",
 			DisplayComponent: <StyledComponents />,
+			path: "/styles",
 		},
 		{
 			option: "Components",
 			background: "linear-gradient(95.41deg, #774FFC 1.67%, #60C5A1 103.49%)",
 			DisplayComponent: <StyledComponents />,
+			path: "/components",
 		},
 		{
 			option: "Icons",
 			background: "linear-gradient(95.46deg, #1AF4E7 0.6%, #8BFB82 97.25%)",
 			DisplayComponent: <StyledComponents />,
+			path: "/icons",
 		},
 		{
 			option: "Themes",
 			background: "linear-gradient(96.78deg, #BC96ED 0%, #81E0FE 108.45%)",
 			DisplayComponent: <StyledComponents />,
+			path: "/themes",
 		},
 		{
 			option: "Logos",
 			background: "linear-gradient(95.46deg, #FB9393 0.6%, #F1A2FE 97.25%)",
 			DisplayComponent: <StyledComponents />,
+			path: "/logos",
 		},
 	];
+	const navigate = useNavigate();
+
 	return (
 		<GridContainer
 			width="100%"
 			height="auto"
 			gridAutoFlow="row"
-			paddingTop="6vh"
 			gridAutoRows="min-content"
 			alignItems="start"
-			padding={constants.spaces.xsmall}
-			gap={constants.spaces.xxsmall}
-			style={{
-				alignContent: "start",
-			}}
+			padding={s_xsmall}
+			gap={s_xxsmall}
+			alignContent="start"
 		>
-			{sidebarOptions.map(({ option, DisplayComponent, background }) => {
+			{sidebarOptions.map(({ option, DisplayComponent, background, path }) => {
 				return (
 					<FlexStartCenterAlignedColumnContainer
 						width="100%"
 						height="auto"
-						padding={constants.spaces.xxsmall}
-						gap={constants.spaces.xxsmall}
+						padding={s_xxsmall}
+						gap={s_xxsmall}
 						key={option}
 						cursor="pointer"
+						onClick={() => navigate(path)}
 					>
 						<Text
-							margin="0"
-							fontSize={constants.typography.size.small}
+							fontSize={fs_small}
 							color="white"
-							paddingLeft={constants.spaces.xxsmall}
-							style={{
-								alignSelf: "flex-start",
-							}}
+							paddingLeft={s_xxsmall}
+							alignSelf="flex-start"
 						>
 							{option}
 						</Text>
@@ -79,8 +85,8 @@ const Sidebar = () => {
 							width="90%"
 							height="auto"
 							background={background}
-							gap={constants.spaces.xsmall}
-							padding={constants.spaces.xxsmall}
+							gap={s_xsmall}
+							padding={s_xxsmall}
 						>
 							{DisplayComponent}
 						</CenterAlignedRowContainer>

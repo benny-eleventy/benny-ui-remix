@@ -6,12 +6,12 @@ import {
 	DualColorChip,
 } from "@/components";
 import {
-	constants,
 	FlexStartCenterAlignedColumnContainer,
 	OverflowFlexStartCenterAlignedColumnContainer,
 	WrappedFlexStartCenterAlignedColumnContainer,
-	themes,
-	CenterAlignedColumnContainer,
+	s_small,
+	s_xsmall,
+	s_xxlarge,
 } from "@benny-eleventy/benny-ui";
 import {
 	columnContainersData,
@@ -19,18 +19,8 @@ import {
 	defaultContainerProps,
 	divProperties,
 } from "@/contentSeed";
-import styled from "styled-components";
-
-const BackgroundColor = styled.div`
-	padding: ${(props) => props.theme["s-small"]};
-	gap: ${(props) => props.theme["s-small"]};
-	font-size: ${(props) => props.theme["fs-small"]};
-	font-weight: ${(props) => props.theme["fw-bold"]};
-`;
 
 export default function Index() {
-	// console.log(themes);
-
 	const styledComponentsFitlers = [
 		"Containers",
 		"Text",
@@ -44,23 +34,23 @@ export default function Index() {
 			<FlexStartCenterAlignedColumnContainer
 				width="100%"
 				height="90vh"
-				padding={constants.spaces.xsmall}
-				gap={constants.spaces.xsmall}
+				padding={s_xsmall}
+				gap={s_xsmall}
 			>
 				<Filters data={styledComponentsFitlers} />
 				<OverflowFlexStartCenterAlignedColumnContainer
 					width="100%"
 					height="auto"
 					backgroundColor={(props) => props.theme.color800}
-					paddingBottom={constants.spaces.xxlarge}
-					gap={(props) => props.theme["s-small"]}
+					paddingBottom={s_xxlarge}
+					gap={s_small}
 				>
 					<SectionTitleText title="Column Containers" />
 					<WrappedFlexStartCenterAlignedColumnContainer
 						width="100%"
 						height="auto"
-						gap={constants.spaces.small}
-						padding={constants.spaces.small}
+						gap={s_small}
+						padding={s_small}
 						style={{ justifyContent: "center" }}
 					>
 						{columnContainersData.map(
@@ -88,8 +78,8 @@ export default function Index() {
 					<WrappedFlexStartCenterAlignedColumnContainer
 						width="100%"
 						height="auto"
-						gap={constants.spaces.small}
-						padding={constants.spaces.small}
+						gap={s_small}
+						padding={s_small}
 						style={{ justifyContent: "center" }}
 					>
 						{rowContainersData.map(
@@ -118,8 +108,8 @@ export default function Index() {
 					<WrappedFlexStartCenterAlignedColumnContainer
 						width="100%"
 						height="auto"
-						gap={constants.spaces.small}
-						padding={constants.spaces.small}
+						gap={s_small}
+						padding={s_small}
 						style={{ justifyContent: "flex-start" }}
 					>
 						{defaultContainerProps.map((property) => (
@@ -136,7 +126,7 @@ export default function Index() {
 					<WrappedFlexStartCenterAlignedColumnContainer
 						width="100%"
 						height="auto"
-						gap={constants.spaces.small}
+						gap={s_small}
 						style={{ justifyContent: "flex-start" }}
 					>
 						{divProperties.map((property) => (
@@ -144,14 +134,14 @@ export default function Index() {
 								key={`${property.utility}`}
 								width="100%"
 								height="auto"
-								gap={constants.spaces.xsmall}
+								gap={s_xsmall}
 							>
 								<SectionTitleText title={property.utility} />
 								<WrappedFlexStartCenterAlignedColumnContainer
 									width="100%"
 									height="auto"
-									gap={constants.spaces.small}
-									padding={constants.spaces.small}
+									gap={s_small}
+									padding={s_small}
 									style={{ justifyContent: "flex-start" }}
 								>
 									{property.properties.map((property) => (
