@@ -6,6 +6,7 @@ import {
 	fw_bold,
 	s_xsmall,
 	s_xxsmall,
+	FlexStartCenterAlignedColumnContainer,
 } from "@benny-eleventy/benny-ui";
 import type { StyledComponent } from "styled-components";
 import type { ContainerProps } from "@benny-eleventy/benny-ui/dist/styles/container/container.types";
@@ -56,18 +57,16 @@ const Card = ({
 				alignItems="center"
 				justifyContent="center"
 				padding={s_xsmall}
-				gap={s_xxsmall}
+				gridGap={s_xxsmall}
 				color="white"
 			>
-				<Text width="80%" margin="0" fontSize={fs_small} fontWeight={fw_bold}>
+				<Text fontSize={fs_small} whiteSpace="normal" fontWeight={fw_bold}>
 					{containerName}
 				</Text>
-				<Text margin="0" fontSize={fs_small}>
+				<Text whiteSpace="normal" fontSize={fs_small}>
 					{containerInfomartion}
 				</Text>
-				<Text margin="0" fontSize={fs_small}>
-					{notes}
-				</Text>
+				<Text fontSize={fs_small}>{notes}</Text>
 			</GridContainer>
 		</GridContainer>
 	);

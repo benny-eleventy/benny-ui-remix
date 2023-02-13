@@ -59,7 +59,7 @@ const Sidebar = () => {
 			gridAutoRows="min-content"
 			alignItems="start"
 			padding={s_xsmall}
-			gap={s_xxsmall}
+			gridGap="0"
 			alignContent="start"
 		>
 			{sidebarOptions.map(({ option, DisplayComponent, background, path }) => {
@@ -68,7 +68,6 @@ const Sidebar = () => {
 						width="100%"
 						height="auto"
 						padding={s_xxsmall}
-						gap={s_xxsmall}
 						key={option}
 						cursor="pointer"
 						onClick={() => navigate(path)}
@@ -85,7 +84,6 @@ const Sidebar = () => {
 							width="90%"
 							height="auto"
 							background={background}
-							gap={s_xsmall}
 							padding={s_xxsmall}
 						>
 							{DisplayComponent}

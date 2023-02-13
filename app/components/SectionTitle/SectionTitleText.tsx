@@ -1,9 +1,4 @@
-import {
-	fontSize,
-	fontWeight,
-	s_xxsmall,
-	Text,
-} from "@benny-eleventy/benny-ui";
+import { fs_regular, s_small, Text } from "@benny-eleventy/benny-ui";
 
 interface SectionTitleTextProps {
 	title: string;
@@ -14,10 +9,9 @@ const SectionTitleText = ({ title }: SectionTitleTextProps) => {
 		<Text
 			margin="0"
 			padding="0"
-			fontSize={fontSize["fs-large"]}
-			fontWeight={`${fontWeight["fw-bold"]}`}
+			fontSize={fs_regular}
 			color="white"
-			paddingLeft={s_xxsmall}
+			paddingLeft={s_small}
 			textTransform="capitalize"
 			style={{
 				alignSelf: "flex-start",

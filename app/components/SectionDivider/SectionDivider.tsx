@@ -15,7 +15,6 @@ const SectionDivider = ({
 		<CenterAlignedColumnContainer
 			width={width}
 			height={height}
-			backgroundColor={backgroundColor}
 		></CenterAlignedColumnContainer>
 	);
 };

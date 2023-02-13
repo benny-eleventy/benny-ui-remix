@@ -35,21 +35,18 @@ export default function Index() {
 				width="100%"
 				height="90vh"
 				padding={s_xsmall}
-				gap={s_xsmall}
 			>
 				<Filters data={styledComponentsFitlers} />
 				<OverflowFlexStartCenterAlignedColumnContainer
-					width="100%"
+					width="98%"
 					height="auto"
 					backgroundColor={(props) => props.theme.color800}
 					paddingBottom={s_xxlarge}
-					gap={s_small}
 				>
 					<SectionTitleText title="Column Containers" />
 					<WrappedFlexStartCenterAlignedColumnContainer
 						width="100%"
 						height="auto"
-						gap={s_small}
 						padding={s_small}
 						style={{ justifyContent: "center" }}
 					>
@@ -78,7 +75,6 @@ export default function Index() {
 					<WrappedFlexStartCenterAlignedColumnContainer
 						width="100%"
 						height="auto"
-						gap={s_small}
 						padding={s_small}
 						style={{ justifyContent: "center" }}
 					>
@@ -108,7 +104,6 @@ export default function Index() {
 					<WrappedFlexStartCenterAlignedColumnContainer
 						width="100%"
 						height="auto"
-						gap={s_small}
 						padding={s_small}
 						style={{ justifyContent: "flex-start" }}
 					>
@@ -126,7 +121,6 @@ export default function Index() {
 					<WrappedFlexStartCenterAlignedColumnContainer
 						width="100%"
 						height="auto"
-						gap={s_small}
 						style={{ justifyContent: "flex-start" }}
 					>
 						{divProperties.map((property) => (
@@ -134,13 +128,11 @@ export default function Index() {
 								key={`${property.utility}`}
 								width="100%"
 								height="auto"
-								gap={s_xsmall}
 							>
 								<SectionTitleText title={property.utility} />
 								<WrappedFlexStartCenterAlignedColumnContainer
 									width="100%"
 									height="auto"
-									gap={s_small}
 									padding={s_small}
 									style={{ justifyContent: "flex-start" }}
 								>

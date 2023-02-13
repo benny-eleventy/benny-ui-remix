@@ -14,6 +14,7 @@ export const SidebarContentContainer = styled(GridContainer)`
 	justify-content: start;
 	position: fixed;
 	top: 6vh;
+	gap: 0;
 `;
 
 export const PageContainer = styled(FlexStartCenterAlignedColumnContainer)`

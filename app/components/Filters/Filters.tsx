@@ -10,7 +10,8 @@ import {
 import styled from "styled-components";
 
 interface FiltersProps {
-	data: string[];
+	data: string[] | any[];
+	chipDisplayTextKey?: string;
 }
 
 interface ChipProps {
@@ -27,14 +28,14 @@ const Chip = ({ displayText, isActive }: ChipProps) => {
 	);
 };
 
-const Filters = ({ data }: FiltersProps) => {
+const Filters = ({ data, chipDisplayTextKey }: FiltersProps) => {
 	return (
 		<FiltersContainer width="100%" height="auto" flexShrink="0">
 			{data.map((item, index) => (
 				<Chip
 					key={index}
 					isActive={index === 0 ? true : false}
-					displayText={item}
+					displayText={chipDisplayTextKey ? item[chipDisplayTextKey] : item}
 					onClick={() => {}}
 				/>
 			))}
@@ -46,7 +47,7 @@ export default Filters;
 
 const FiltersContainer = styled(OverflowFlexStartCenterAlignedRowContainer)(
 	({ theme }) => ({
-		width: "100%",
+		width: "98%",
 		padding: s_xsmall,
 		gap: s_xxsmall,
 		"&::-webkit-scrollbar": {
@@ -73,4 +74,5 @@ const ChipContainer = styled(CenterAlignedColumnContainer)<ChipContainerProps>(
 const ChipText = styled(Text)(({ theme }) => ({
 	fontSize: s_small,
 	fontWeight: fw_regular,
+	whiteSpace: "nowrap",
 }));

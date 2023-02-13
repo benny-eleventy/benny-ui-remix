@@ -11,7 +11,7 @@
 		"wrangler": "wrangler pages dev ./public"
 	},
 	"dependencies": {
-		"@benny-eleventy/benny-ui": "^1.4.0",
+		"@benny-eleventy/benny-ui": "^1.4.4",
 		"@remix-run/cloudflare": "^1.12.0",
 		"@remix-run/cloudflare-pages": "^1.12.0",
 		"@remix-run/react": "^1.12.0",

@@ -4,17 +4,17 @@ const StyledComponents = () => {
 	return (
 		<>
 			<CenterAlignedColumnContainer
-				width="clamp(2rem,18%,3.5rem)"
+				width="clamp(2rem,20%,3.5rem)"
 				aspectRatio="1"
 				background="black"
 			/>
 			<CenterAlignedColumnContainer
-				width="clamp(2rem,18%,3.5rem)"
+				width="clamp(2rem,20%,3.5rem)"
 				aspectRatio="1"
 				background="black"
 			/>
 			<CenterAlignedColumnContainer
-				width="clamp(2rem,18%,3.5rem)"
+				width="clamp(2rem,20%,3.5rem)"
 				aspectRatio="1"
 				background="black"
 			/>
