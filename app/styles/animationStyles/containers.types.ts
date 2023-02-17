@@ -69,7 +69,7 @@ export interface ContainerProps {
 	gridGap?: string;
 
 	background?: string;
-	backgroundColor?: string | ((props: any) => any);
+	backgroundColor?: string;
 	backgroundImage?: string;
 	backgroundSize?: string;
 	backgroundPosition?: string;
@@ -112,7 +112,7 @@ export interface ContainerProps {
 	letterSpacing?: string;
 	textAlign?: string;
 	textDecoration?: string;
-	textTransform?: string;
+	textTransform?: string | undefined;
 	textIndent?: string;
 	wordSpacing?: string;
 	writingMode?: string;

@@ -8,7 +8,13 @@ import {
 } from "@benny-eleventy/benny-ui";
 
 import type { ContainerProps } from "./containers.types";
-import type { MotionProps, Variants, Variant } from "framer-motion";
+import type {
+	MotionProps,
+	Variants,
+	Variant,
+	EasingDefinition,
+	Transition,
+} from "framer-motion";
 import {
 	ANOverflowFlexStartCenterAlignedColumnContainer,
 	ANWrappedFlexStartCenterAlignedColumnContainer,
@@ -16,24 +22,27 @@ import {
 
 interface AcustomInterface {
 	animationType?: "opacity" | "scale" | "rotate" | "x" | "y";
-	animationDuration?: number[] | string[];
+	animationDuration?: number[];
 	animationConfig?: number[];
-	animationEasing?: "easeIn" | "easeOut" | "easeInOut" | "linear";
+	animationEasing?: EasingDefinition;
 	hoverAnimation?: Variant;
 	clickAnimation?: Variant;
 	animationDelay?: number;
+	animationRepeat?: number;
+	animationRepeatType?: "loop" | "reverse" | "none" | "mirror";
 }
 
 type unionProps = ContainerProps & MotionProps & AcustomInterface;
 
 interface GcustomInterface {
 	animationType: "opacity" | "scale" | "rotate" | "x" | "y" | "none";
-	animationDuration: number[] | string[];
+	animationDuration: number[];
 	animationConfig: number[];
-	animationEasing: "easeIn" | "easeOut" | "easeInOut" | "linear";
+	animationEasing: EasingDefinition;
 	hoverAnimation: Variant;
 	clickAnimation: Variant;
-
+	animationRepeat: number;
+	animationRepeatType: "loop" | "reverse" | "none" | "mirror";
 	animationDelay: number;
 }
 
@@ -45,6 +54,8 @@ const generateAnimationTypeVariants = ({
 	hoverAnimation,
 	clickAnimation,
 	animationDelay,
+	animationRepeat,
+	animationRepeatType,
 }: GcustomInterface): Variants => {
 	const initialvalue = animationConfig[0];
 	const animatevalue = animationConfig[1];
@@ -56,9 +67,14 @@ const generateAnimationTypeVariants = ({
 		animate: {
 			[animationType]: animatevalue,
 			transition: {
+				//@ts-ignore
 				duration: animationDuration[0],
+				//@ts-ignore
 				ease: animationEasing,
 				delay: animationDelay,
+				repeat: animationRepeat,
+				//@ts-ignore
+				repeatType: animationRepeatType,
 			},
 		},
 		exit: {
@@ -140,6 +156,10 @@ function createAnimatedComponent(key: string) {
 						? rest.clickAnimation
 						: { scale: 1 },
 					animationDelay: rest.animationDelay ? rest.animationDelay : 0,
+					animationRepeat: rest.animationRepeat ? rest.animationRepeat : 0,
+					animationRepeatType: rest.animationRepeatType
+						? rest.animationRepeatType
+						: "none",
 				});
 			} else {
 				return rest.variants;
