@@ -48,13 +48,19 @@ const Sidebar = () => {
 			DisplayComponent: <StyledComponents />,
 			path: "/logos",
 		},
+		{
+			option: "Animations",
+			background: "linear-gradient(95.46deg, #FB9393 0.6%, #F1A2FE 97.25%)",
+			DisplayComponent: <StyledComponents />,
+			path: "/animations",
+		},
 	];
 	const navigate = useNavigate();
 
 	return (
 		<GridContainer
 			width="100%"
-			height="auto"
+			height="96vh"
 			gridAutoFlow="row"
 			gridAutoRows="min-content"
 			alignItems="start"
@@ -70,6 +76,7 @@ const Sidebar = () => {
 						padding={s_xxsmall}
 						key={option}
 						cursor="pointer"
+						gap={s_xxsmall}
 						onClick={() => navigate(path)}
 					>
 						<Text

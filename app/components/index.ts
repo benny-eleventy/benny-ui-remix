@@ -15,3 +15,4 @@ export {
 };
 export * from "./Cards";
 export * from "./Chip";
+export * from "./Scratch";

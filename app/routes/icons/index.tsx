@@ -10,6 +10,7 @@ import {
 	Text,
 	WrappedFlexStartCenterAlignedColumnContainer,
 } from "@benny-eleventy/benny-ui";
+import { useTheme } from "styled-components";
 
 const index = () => {
 	const listOfIcons = [
@@ -50,7 +51,7 @@ const index = () => {
 							border="1px solid rgba(255,255,255,0.7)"
 							key={icon}
 							padding={s_xxsmall}
-							color="rgba(255,255,255,0.95)"
+							color={useTheme().color_100}
 							width="128px"
 							aspectRatio="1/1.1"
 						>

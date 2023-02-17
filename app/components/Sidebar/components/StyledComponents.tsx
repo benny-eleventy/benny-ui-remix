@@ -1,23 +1,25 @@
-import { CenterAlignedColumnContainer } from "@benny-eleventy/benny-ui";
+import { CenterAlignedColumnContainer, Icon } from "@benny-eleventy/benny-ui";
+import { useTheme } from "styled-components";
 
 const StyledComponents = () => {
+	const listOfIcons = ["Author", "Hey", "Home"];
 	return (
 		<>
-			<CenterAlignedColumnContainer
-				width="clamp(2rem,20%,3.5rem)"
-				aspectRatio="1"
-				background="black"
-			/>
-			<CenterAlignedColumnContainer
-				width="clamp(2rem,20%,3.5rem)"
-				aspectRatio="1"
-				background="black"
-			/>
-			<CenterAlignedColumnContainer
-				width="clamp(2rem,20%,3.5rem)"
-				aspectRatio="1"
-				background="black"
-			/>
+			{listOfIcons.map((icon) => {
+				const RenderIcon = Icon[icon];
+				return (
+					<CenterAlignedColumnContainer
+						key={icon}
+						width="clamp(2rem,20%,3.5rem)"
+						aspectRatio="1"
+						background="black"
+						// eslint-disable-next-line react-hooks/rules-of-hooks
+						color={useTheme().color_100}
+					>
+						<RenderIcon size="32px" />
+					</CenterAlignedColumnContainer>
+				);
+			})}
 		</>
 	);
 };
